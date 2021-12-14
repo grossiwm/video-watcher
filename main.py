@@ -1,7 +1,6 @@
 from youtube_automator import watch
 from selenium import webdriver;
 from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.support import expected_conditions as ec
 
 
 options = webdriver.ChromeOptions()
