@@ -9,6 +9,11 @@ options.add_experimental_option('excludeSwitches', ['enable-logging'])
 
 chrome=webdriver.Chrome(ChromeDriverManager().install(), options=options)
 
-watch(chrome, 'https://www.youtube.com/watch?v=Cf_5aLm-CGs')
+file=open('youtube_urls.txt', 'r')
+Lines = file.readlines()
+
+for line in Lines:
+    url = line.strip()
+    watch(chrome, url)
 
 chrome.close()
