@@ -21,14 +21,5 @@ def watch(driver, url):
 
     duration_div=wait.until(ec.visibility_of_element_located((By.CSS_SELECTOR, 'span.ytp-time-duration')))
     duration = get_secs(duration_div.text)
+    print(f"sleeping for {duration} seconds")
     time.sleep(duration)
-
-
-options = webdriver.ChromeOptions()
-options.add_experimental_option('excludeSwitches', ['enable-logging'])
-
-chrome=webdriver.Chrome(ChromeDriverManager().install(), options=options)
-
-watch(chrome, 'https://www.youtube.com/watch?v=Cf_5aLm-CGs')
-
-chrome.close()
